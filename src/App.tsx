@@ -1,11 +1,13 @@
-import { FormEvent, useState } from "react";
-import { Loader, Placeholder } from "@aws-amplify/ui-react";
-import "./App.css";
+
+import { useState } from "react";
+import type { FormEvent } from "react";
 import { Amplify } from "aws-amplify";
-import { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
-import outputs from "../amplify_outputs.json";
+import { Loader, Placeholder } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
+import type { Schema } from "../amplify/data/resource";
+import outputs from "../amplify_outputs.json";
+import "./App.css";
 
 Amplify.configure(outputs);
 
@@ -51,7 +53,7 @@ function App() {
 					Simply type a few ingredients using the format ingredient1,
 					ingredient2, etc., and Recipe AI will generate an all-new
 					recipe on
-					demand...
+					demand... Andrew Kim CSCE 3420
 				</p>
 			</div>
 
@@ -62,7 +64,7 @@ function App() {
 						className="wide-input"
 						id="ingredients"
 						name="ingredients"
-						placeholder="Ingredient1, Ingredient2, Ingredient3,...etc"
+						placeholder="Andrew Kim CSCE 3420 made this"
 					/>
 					<button type="submit" className="search-button">
 						Generate
