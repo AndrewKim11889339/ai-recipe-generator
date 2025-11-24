@@ -6,8 +6,16 @@ import { generateClient } from "aws-amplify/data";
 import { Loader, Placeholder } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import type { Schema } from "../amplify/data/resource";
-import outputs from "../amplify_outputs.json";
 import "./App.css";
+
+// Import outputs safely - file is generated during deployment
+let outputs: any = {};
+try {
+	// Use require for CommonJS compatibility and to avoid module resolution issues
+	outputs = require("../amplify_outputs.json");
+} catch (e) {
+	console.warn("amplify_outputs.json not found - running in build environment");
+}
 
 Amplify.configure(outputs);
 
