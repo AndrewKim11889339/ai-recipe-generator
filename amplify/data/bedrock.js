@@ -6,15 +6,15 @@ export function request(ctx) {
   
     // Return the request configuration
     return {
-      resourcePath: `/model/anthropic.claude-sonnet-4-20250514-v1:0/invoke`,
+      resourcePath: `/model/anthropic.claude-3-5-sonnet-20241022-v2:0/invoke`,
       method: "POST",
       params: {
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          anthropic_version: "bedrock-2024-04-19",
-          max_tokens: 2048,
+          anthropic_version: "bedrock-2023-05-31",
+          max_tokens: 1000,
           messages: [
             {
               role: "user",
@@ -22,6 +22,7 @@ export function request(ctx) {
                 {
                   type: "text",
                   text: `\n\nHuman: ${prompt}\n\nAssistant:`,
+
                 },
               ],
             },
